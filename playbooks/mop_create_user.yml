@@ -6,16 +6,16 @@
 
   tasks:
     
-    - name: create user profile xxxxx
+    - name: creation d'un profil utilisateur TEAMxx
       ibmi_user_and_group:
         operation: 'create'
-        user: 'XXXXX'
+        user: 'TEAMxx'
         user_class: '*SECOFR'
       register: user_result
     - debug:
        var: user_result
 
-    - name: display user profile xxxxx
+    - name: affichage du profil utilisateur TEAMxx
       ibmi_user_and_group:
         operation: 'display'
-        user: 'xxxxx'
+        user: 'TEAMxx'
