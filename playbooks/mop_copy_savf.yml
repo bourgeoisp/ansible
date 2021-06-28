@@ -11,6 +11,6 @@
         src: '/home/files/XH2.SAVF'
         lib_name: 'ANSIBLE'
         force: True
-      register: copy
+      register: copy_result
     - debug:
-       var: copy
+       var: copy_result
