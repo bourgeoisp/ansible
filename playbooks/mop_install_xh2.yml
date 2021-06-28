@@ -5,11 +5,11 @@
     - ibm.power_ibmi
   tasks:
 
-    - name: install product from SAVF
+    - name: installation du produit XH2 a partir du SAVF
       ibmi_install_product_from_savf:
         product: 5770XH2
         savf_name: 'XH2'
         savf_library: 'ANSIBLE'
-      register: install
+      register: install_result
     - debug:
-        var: install
+        var: install_result
