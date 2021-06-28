@@ -6,9 +6,9 @@
 
   tasks:
 
-    - name: Copy XH2 SAVF to Ansible library
+    - name: copie du SAVF XH2 dans la bibliotheque ANSIBLE
       ibmi_copy:
-        src: '/home/teamX/Ansible-for-i-MOP/playbooks/files/XH2.SAVF'
+        src: '/home/files/XH2.SAVF'
         lib_name: 'ANSIBLE'
         force: True
       register: copy
