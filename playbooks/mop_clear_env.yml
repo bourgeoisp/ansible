@@ -5,7 +5,7 @@
      - ibm.power_ibmi
   tasks:
 
-    - name: Stop HTTP server
+    - name: arret du serveur HTTP
       ibmi_tcp_server_service:
          name_list: ['*HTTP']
          state: 'stopped'
@@ -14,7 +14,7 @@
     - debug:
        var: stop_result
 
-    - name: delete ansible library
+    - name: suppression de la bibliotheque ANSIBLE
       ibmi_cl_command:
         cmd: dltlib lib(ansible)
         joblog: false
@@ -22,15 +22,15 @@
     - debug:
        var: dltlib_result
 
-    - name: delete TeamX user profile
+    - name: suppression du profil TEAMxx
       ibmi_user_and_group:
         operation: 'delete'
-        user: 'xxxxx'
+        user: 'TEAMxx'
       register: user_result
     - debug:
        var: user_result
      
-    - name: Uninstall product XH2 with DLTLICPGM command
+    - name: desinstallation du produit XH2 (IBM i Access for Web)
       ibmi_uninstall_product:
         product: 5770XH2
       register: uninstall
