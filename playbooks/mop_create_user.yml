@@ -11,11 +11,14 @@
         operation: 'create'
         user: 'TEAMxx'
         user_class: '*SECOFR'
-      register: user_result
+      register: create_result
     - debug:
-       var: user_result
+       var: create_result
 
     - name: affichage du profil utilisateur TEAMxx
       ibmi_user_and_group:
         operation: 'display'
         user: 'TEAMxx'
+      register: display_result
+    - debug:
+       var: display_result
