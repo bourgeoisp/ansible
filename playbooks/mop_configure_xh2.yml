@@ -6,15 +6,15 @@
 
   tasks:
     
-    - name: configure iSeries Acces For Web -- CFGACCWEB --
+    - name: configuration de IBM Access For Web -- CFGACCWEB --
       ibmi_cl_command:
         cmd: CFGACCWEB APPSVRTYPE(*INTAPPSVR) INSTANCE(*MOBILE)
         joblog: false
-      register: cfgaccweb
+      register: cfgaccweb_result
     - debug:
-       var: cfgaccweb
+       var: cfgaccweb_result
 
-    - name: start server HTTP
+    - name: demarrage du serveur *HTTP *ADMIN
       ibmi_tcp_server_service:
         name_list: ['*HTTP']
         state: 'started'
