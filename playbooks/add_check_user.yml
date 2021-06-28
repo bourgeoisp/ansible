@@ -1,0 +1,19 @@
+---
+- hosts: ibmi
+  gather_facts: false
+  collections:
+    - ibm.power_ibmi
+
+  tasks:
+    
+    - name: verification d'attributs du profil TEAMxx
+      ibmi_user_compliance_check :  
+        yyyy:
+          - 'TEAMxx'
+        yyyy:
+          - { 'zzzz':'USER_CLASS_NAME', 'zzzz':['*PGMR'] }
+          - { 'zzzz':'STATUS', 'zzzz':['*ENABLED'] }
+      register: user_result
+    - debug:
+       msg: 
+       - "resultat : {{ user_result.result_set }}"
